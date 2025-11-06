@@ -1,5 +1,4 @@
-# Proyecto 7 - Aventura en la Mazmorra
-Aventura en la Mazmorra
+"""Aventura en la Mazmorra
 
 💡 Proyecto: “Aventura en la Mazmorra”
 
@@ -30,3 +29,47 @@ Aventura en la Mazmorra
     .Extras:
         a) Añade un sistema de inventario.
         b) Guarda las estadísticas de la partida en un archivo .txt.
+"""
+import random
+
+#Definición 
+armas = {
+    "Espada fragmentada"  : 3,  #Arma, Daño
+    "Arco dañado"         : 3,  #Arma, Daño
+    "Piedras"             : 3,  #Arma, Daño
+    "Puños"               : 2   #Arma, Daño
+    }
+
+objetos = ["Poción", "Super Poción"]
+
+class Jugador ():
+
+    def __init__(self):
+        self.nombre = ""
+        self.vida = random.randint(5,10)
+        self.energia = random.randint(5,10)
+        self.inventario = {
+            "arma" : "",
+            "Objetos" : []
+        }
+    
+        self.inventario["arma"] = random.choice(list(armas.keys()))
+
+
+        #for objeto in objetos:
+        #    if (random.randint(1,5) ==2 ): #20% Posibilidades
+        #        self.inventario.append(objeto)
+
+
+class Enemigo ():
+
+    def __init__(self):
+        self.nombre = ""
+        self.vida = random.randint(5,10)
+        self.energia = random.randint(5,10)
+        self.inventario = []
+
+
+prueba = Jugador()
+
+print(f"{prueba.inventario}")
